@@ -37,7 +37,12 @@ def reorder(lines, order=None):
     return lines
 
 
-def reverse_line(input_ids, use_bos, tokenizer):
+def reverse_line(
+        input_ids,
+        use_bos,
+        tokenizer,
+        reverse_last_line=False
+):
     new_input_ids = np.zeros_like(input_ids)
     if use_bos:
         new_input_ids[0] = input_ids[0]
@@ -50,7 +55,10 @@ def reverse_line(input_ids, use_bos, tokenizer):
             new_input_ids[start: end] = input_ids[start: end][::-1]
             new_input_ids[end] = tokenizer.sep_token_id
             start = end + 1
-    new_input_ids[start:] = input_ids[start:]
+    if reverse_last_line:
+        new_input_ids[start:] = input_ids[start:][::-1]
+    else:
+        new_input_ids[start:] = input_ids[start:]
     return new_input_ids
 
 
