@@ -1,0 +1,12 @@
+# optimizer
+learning_rate: 5e-5
+weight_decay: 0.0
+# scheduler
+scheduler_type: "linear"
+num_warmup_steps: 0
+# training loop
+epochs: 20
+batch_size: 32
+gradient_accumulation_steps: 1
+# other
+full_train: false

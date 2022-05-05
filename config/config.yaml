@@ -1,0 +1,9 @@
+defaults:
+    - data: base
+    - training: base
+    - _self_
+
+exp_name: null
+debug: false
+device: "cuda"
+model_card: "gpt2"

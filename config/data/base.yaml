@@ -1,0 +1,6 @@
+data_dir: "/content/drive/MyDrive/11-785-final/data/"
+ckpt_dir: "/content/drive/MyDrive/11-785-final/ckpt/"
+reverse: true
+use_bos: true
+order: null
+punctuation: true
